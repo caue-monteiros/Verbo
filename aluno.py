@@ -1,3 +1,8 @@
+def aplicar_desconto(valor, plano):
+    if plano == "anual":
+        return round(valor * 0.85, 2)
+    return valor
+
 nome = input("Nome do aluno: ")
 plano = input("Plano (anual ou mensal): ").strip().lower()
 while plano != "anual" and plano != "mensal":
@@ -15,8 +20,8 @@ while True:
         break
     except ValueError:
         print("Valor inválido. Digite um número inteiro, ex: 3")
-if plano == "anual":
-    mensalidade = round(mensalidade * 0.85, 2)
+
+mensalidade = aplicar_desconto(mensalidade, plano)
 
 
 print(f"Aluna: {nome}")
