@@ -1,9 +1,10 @@
 nome = input("Nome do aluno: ")
-plano = input("nome do plano: ")
+plano = input("nome do plano: ").strip().lower()
 mensalidade = float(input("valor da mensalidade: "))
 meses_pagos = int(input("quantos meses: "))
 if plano == "anual":
     mensalidade = mensalidade * 0.85
+
 
 print(f"Aluna: {nome}")
 print(f"Plano: {plano}")
