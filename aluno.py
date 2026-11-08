@@ -1,9 +1,22 @@
 nome = input("Nome do aluno: ")
-plano = input("nome do plano: ").strip().lower()
-mensalidade = float(input("valor da mensalidade: "))
-meses_pagos = int(input("quantos meses: "))
+plano = input("Plano (anual ou mensal): ").strip().lower()
+while plano != "anual" and plano != "mensal":
+    print("Plano inválido. Digite anual ou mensal.")
+    plano = input("Plano (anual ou mensal): ").strip().lower()
+while True:
+    try:
+        mensalidade = float(input("valor da mensalidade: ").replace(",", "."))
+        break
+    except ValueError:
+        print("Valor inválido. Digite um número, ex: 89.90")
+while True:
+    try:
+        meses_pagos = int(input("quantos meses: "))
+        break
+    except ValueError:
+        print("Valor inválido. Digite um número inteiro, ex: 3")
 if plano == "anual":
-    mensalidade = round(mensalidade * 0.85, 2)   # vira 76.42
+    mensalidade = round(mensalidade * 0.85, 2)
 
 
 print(f"Aluna: {nome}")
