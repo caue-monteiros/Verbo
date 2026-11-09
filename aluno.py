@@ -11,18 +11,20 @@ def ler_valor(pergunta):
             print("Valor inválido. Digite um número, ex: 89.90")
 
 
+def ler_inteiro(pergunta):
+    while True:
+        try:
+            return int(input(pergunta))
+        except ValueError:
+            print("Valor inválido. Digite um número inteiro, ex: 3")
+
 nome = input("Nome do aluno: ")
 plano = input("Plano (anual ou mensal): ").strip().lower()
 while plano != "anual" and plano != "mensal":
     print("Plano inválido. Digite anual ou mensal.")
     plano = input("Plano (anual ou mensal): ").strip().lower()
 mensalidade = ler_valor("valor da mensalidade: ")
-while True:
-    try:
-        meses_pagos = int(input("quantos meses: "))
-        break
-    except ValueError:
-        print("Valor inválido. Digite um número inteiro, ex: 3")
+meses_pagos = ler_inteiro("quantos meses: ")
 
 mensalidade = aplicar_desconto(mensalidade, plano)
 
