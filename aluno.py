@@ -3,17 +3,20 @@ def aplicar_desconto(valor, plano):
         return round(valor * 0.85, 2)
     return valor
 
+def ler_valor(pergunta):
+    while True:
+        try:
+            return float(input(pergunta).replace(",","."))
+        except ValueError:
+            print("Valor inválido. Digite um número, ex: 89.90")
+
+
 nome = input("Nome do aluno: ")
 plano = input("Plano (anual ou mensal): ").strip().lower()
 while plano != "anual" and plano != "mensal":
     print("Plano inválido. Digite anual ou mensal.")
     plano = input("Plano (anual ou mensal): ").strip().lower()
-while True:
-    try:
-        mensalidade = float(input("valor da mensalidade: ").replace(",", "."))
-        break
-    except ValueError:
-        print("Valor inválido. Digite um número, ex: 89.90")
+mensalidade = ler_valor("valor da mensalidade: ")
 while True:
     try:
         meses_pagos = int(input("quantos meses: "))
