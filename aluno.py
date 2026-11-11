@@ -18,11 +18,17 @@ def ler_inteiro(pergunta):
         except ValueError:
             print("Valor inválido. Digite um número inteiro, ex: 3")
 
+def ler_plano(pergunta):
+    while True:
+        plano = input(pergunta).strip().lower()
+        if plano in ("mensal","anual"):
+            return plano
+        print("Inválido. Só existem planos anuais ou mensais")
+
+    
+
 nome = input("Nome do aluno: ")
-plano = input("Plano (anual ou mensal): ").strip().lower()
-while plano != "anual" and plano != "mensal":
-    print("Plano inválido. Digite anual ou mensal.")
-    plano = input("Plano (anual ou mensal): ").strip().lower()
+plano = ler_plano("Plano (anual ou mensal): ")
 mensalidade = ler_valor("valor da mensalidade: ")
 meses_pagos = ler_inteiro("quantos meses: ")
 
