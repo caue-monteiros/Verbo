@@ -31,7 +31,7 @@ def ler_nome(pergunta):
         if nome != "":
             return nome
         print("Insira algum nome.")
-
+totais = []
 nome = ler_nome("Nome do aluno: ")
 plano = ler_plano("Plano (anual ou mensal): ")
 mensalidade = ler_valor("valor da mensalidade: ")
@@ -45,7 +45,9 @@ print(f"Mensalidade: R$ {mensalidade:.2f}")
 
 total_pago = meses_pagos * mensalidade
 print(f"total: R$ {total_pago:.2f}")
-
+totais.append(total_pago)
+print(f"Alunos cadastrados: {len(totais)}")
+print(f"Total da turma: R$ {sum(totais):.2f}")
 
 
 
