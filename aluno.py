@@ -57,8 +57,8 @@ while True:
 print(f"Alunos cadastrados: {len(totais)}")
 print(f"Total da turma: R$ {sum(totais):.2f}")
 print("Turma:")
-for aluno in nomes:
-    print(f"- {aluno}")
+for aluno, total in zip(nomes, totais):
+    print(f"- {aluno}: R$ {total:.2f}")
 
 
 
