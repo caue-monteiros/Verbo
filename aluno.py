@@ -25,17 +25,21 @@ def ler_plano(pergunta):
             return plano
         print("Inválido. Só existem planos anuais ou mensais")
 
-    
+def ler_nome(pergunta):
+    while True:
+        nome = input(pergunta).strip()
+        if nome != "":
+            return nome
+        print("Insira algum nome.")
 
-nome = input("Nome do aluno: ")
+nome = ler_nome("Nome do aluno: ")
 plano = ler_plano("Plano (anual ou mensal): ")
 mensalidade = ler_valor("valor da mensalidade: ")
 meses_pagos = ler_inteiro("quantos meses: ")
-
 mensalidade = aplicar_desconto(mensalidade, plano)
 
 
-print(f"Aluna: {nome}")
+print(f"Aluno: {nome}")
 print(f"Plano: {plano}")
 print(f"Mensalidade: R$ {mensalidade:.2f}")
 
