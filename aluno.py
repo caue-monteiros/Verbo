@@ -32,8 +32,7 @@ def ler_nome(pergunta):
             return nome
         print("Insira algum nome.")
 
-totais = []
-nomes = []
+turma = []
 while True:
     nome = ler_nome("Nome do aluno: ")
     plano = ler_plano("Plano (anual ou mensal): ")
@@ -48,17 +47,20 @@ while True:
 
     total_pago = meses_pagos * mensalidade
     print(f"total: R$ {total_pago:.2f}")
-    totais.append(total_pago)
-    nomes.append(nome)
+    ficha = {"nome": nome, "plano": plano, "total": total_pago}
+    turma.append(ficha)
+
     continuar = input("Cadastrar outro aluno? (s/n): ").strip().lower()
     if continuar != "s":
         break
 
-print(f"Alunos cadastrados: {len(totais)}")
-print(f"Total da turma: R$ {sum(totais):.2f}")
+print(f"Alunos cadastrados: {len(turma)}")
+total_turma = 0
 print("Turma:")
-for aluno, total in zip(nomes, totais):
-    print(f"- {aluno}: R$ {total:.2f}")
+for ficha in turma:
+    print(f"- {ficha['nome']}: R$ {ficha['total']:.2f}")
+    total_turma = total_turma + ficha['total']
+print(f"Total da turma: R$ {total_turma:.2f}")
 
 
 
