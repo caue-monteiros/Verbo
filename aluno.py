@@ -61,6 +61,19 @@ for ficha in turma:
     print(f"- {ficha['nome']}: R$ {ficha['total']:.2f}")
     total_turma = total_turma + ficha['total']
 print(f"Total da turma: R$ {total_turma:.2f}")
-
+total_anual = 0
+print("Plano anual:")
+for ficha in turma:
+    if ficha['plano'] == "anual":
+        print(f"- {ficha['nome']}: R$ {ficha['total']:.2f}")
+        total_anual = total_anual + ficha['total']
+print(f"Total anual: R$ {total_anual:.2f}")
+total_mensal = 0
+print("Plano mensal:")
+for ficha in turma:
+    if ficha['plano'] == "mensal":
+        print(f"- {ficha['nome']}: R$ {ficha['total']:.2f}")
+        total_mensal = total_mensal + ficha['total']
+print(f"Total mensal: R$ {total_mensal:.2f}")
 
 
