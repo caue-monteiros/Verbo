@@ -17,7 +17,7 @@ def ler_inteiro(pergunta):
         try:
             return int(input(pergunta))
         except ValueError:
-            print("Valor inválido. Digite um número, ex: 15")
+            print("Valor inválido. Digite um número inteiro, ex: 15")
 
 def aplicar_multa(valor, dias):
     if dias > 30:

@@ -51,3 +51,17 @@ for ficha in parcelas:
         print(f"- {ficha['nome']}: R$ {ficha['valor']:.2f}")
         total = total + ficha['valor']
 print(f"Total prioridade: R$ {total:.2f}")
+
+# Exercicio 6 (conserte): soma entrou no if (8 espacos) e o print do total saiu do for
+parcelas = [
+    {"nome": "Ana", "dias": 10, "valor": 100},
+    {"nome": "Bruno", "dias": 45, "valor": 204.51},
+    {"nome": "Carla", "dias": 60, "valor": 153},
+]
+total = 0
+for ficha in parcelas:
+    if ficha['dias'] > 30:
+        print(f"- {ficha['nome']}: R$ {ficha['valor']:.2f}")
+        total = total + ficha['valor']
+print(f"Total prioridade: R$ {total:.2f}")
+

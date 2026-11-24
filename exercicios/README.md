@@ -1,6 +1,6 @@
 # Exercícios de fixação
 
-Exercícios que resolvi num simulador de Python, em degraus de dificuldade crescente. Todos usam o tema da Verbo (planos, mensalidades, descontos e cadastro de alunos). Cada arquivo é um degrau, e cada exercício tem um comentário dizendo o que ele pratica.
+Exercícios que resolvi num simulador de Python e no VS Code, em degraus de dificuldade crescente. Todos usam o tema da Verbo (planos, mensalidades, descontos, cobrança e cadastro de alunos). Cada arquivo é um degrau, e cada exercício tem um comentário dizendo o que ele pratica.
 
 | Arquivo | O que pratica |
 |---|---|
@@ -10,6 +10,8 @@ Exercícios que resolvi num simulador de Python, em degraus de dificuldade cresc
 | `09_if_else.py` | `if` / `else` e regras de negócio por plano |
 | `10_while.py` | `while`, contador, acumulador, `while True` com `break` |
 | `11_try_except.py` | `try` / `except ValueError` e validação de entrada até vir um número |
+| `12_estrutura_for.py` | Estrutura com `for`: o que vem antes, dentro e depois do laço; acumulador, contador, filtro com `if` e lista nova com `.append()` |
+| `13_estrutura_cadastro.py` | Cadastro com `while True`: lista criada antes do laço, fichas (dicionários) com `.append()`, `len()` e resumo depois do laço |
 
 ## Como rodar
 
