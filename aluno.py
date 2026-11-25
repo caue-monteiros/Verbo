@@ -65,16 +65,19 @@ def cadastrar_turma():
             break
     return turma
 
-turma = cadastrar_turma()
 
-print(f"Alunos cadastrados: {len(turma)}")
-total_turma = 0
-print("Turma:")
-for ficha in turma:
-    print(f"- {ficha['nome']}: R$ {ficha['total']:.2f}")
-    total_turma = total_turma + ficha['total']
-print(f"Total da turma: R$ {total_turma:.2f}")
-mostrar_plano(turma, "anual")
-mostrar_plano(turma, "mensal")
+def mostrar_resumo(turma):
+    print(f"Alunos cadastrados: {len(turma)}")
+    total_turma = 0
+    print("Turma:")
+    for ficha in turma:
+        print(f"- {ficha['nome']}: R$ {ficha['total']:.2f}")
+        total_turma = total_turma + ficha['total']
+    print(f"Total da turma: R$ {total_turma:.2f}")
+    mostrar_plano(turma, "anual")
+    mostrar_plano(turma, "mensal")
+
+turma = cadastrar_turma()
+mostrar_resumo(turma)
 
 
