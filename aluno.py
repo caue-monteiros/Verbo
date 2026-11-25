@@ -41,27 +41,31 @@ def mostrar_plano(turma, plano):
             total_plano = total_plano + ficha['total']
     print(f"Total {plano}: R$ {total_plano:.2f}")
 
-turma = []
-while True:
-    nome = ler_nome("Nome do aluno: ")
-    plano = ler_plano("Plano (anual ou mensal): ")
-    mensalidade = ler_valor("valor da mensalidade: ")
-    meses_pagos = ler_inteiro("quantos meses: ")
-    mensalidade = aplicar_desconto(mensalidade, plano)
+def cadastrar_turma():
+    turma = []
+    while True:
+        nome = ler_nome("Nome do aluno: ")
+        plano = ler_plano("Plano (anual ou mensal): ")
+        mensalidade = ler_valor("valor da mensalidade: ")
+        meses_pagos = ler_inteiro("quantos meses: ")
+        mensalidade = aplicar_desconto(mensalidade, plano)
 
 
-    print(f"Aluno: {nome}")
-    print(f"Plano: {plano}")
-    print(f"Mensalidade: R$ {mensalidade:.2f}")
+        print(f"Aluno: {nome}")
+        print(f"Plano: {plano}")
+        print(f"Mensalidade: R$ {mensalidade:.2f}")
 
-    total_pago = meses_pagos * mensalidade
-    print(f"total: R$ {total_pago:.2f}")
-    ficha = {"nome": nome, "plano": plano, "total": total_pago}
-    turma.append(ficha)
+        total_pago = meses_pagos * mensalidade
+        print(f"total: R$ {total_pago:.2f}")
+        ficha = {"nome": nome, "plano": plano, "total": total_pago}
+        turma.append(ficha)
 
-    continuar = input("Cadastrar outro aluno? (s/n): ").strip().lower()
-    if continuar != "s":
-        break
+        continuar = input("Cadastrar outro aluno? (s/n): ").strip().lower()
+        if continuar != "s":
+            break
+    return turma
+
+turma = cadastrar_turma()
 
 print(f"Alunos cadastrados: {len(turma)}")
 total_turma = 0
