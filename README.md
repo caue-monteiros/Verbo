@@ -25,6 +25,8 @@ Trabalho desde 2023 no pós-vendas de uma edtech, lidando com cobrança, cancela
 - Regras de negócio com `if`
 - Padronização de texto com `.strip()` e `.lower()`
 - Arredondamento de valores em dinheiro com `round()`
+- Dinheiro com `Decimal` (sem os erros de arredondamento do `float`) e arredondamento de centavos com `quantize`
+- Constantes com nome (`LIMITE_DIAS`, `PERCENTUAL_MULTA`) no lugar de números soltos no código
 - Laços com `while` e `for`, validação de entrada com `try/except`
 - Funções com parâmetros e `return`, para não repetir código
 - Organização do programa em funções (uma que devolve dados, outra que recebe e mostra), com o programa principal no fim do arquivo
